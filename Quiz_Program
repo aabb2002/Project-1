@@ -1,5 +1,9 @@
 # A quiz program that tests your kownledge on topics like art, sports, and space. 
-# The user inputs what topic they want to test on and is given aser
+# The user inputs what topic they want to test on and it's validated to make sure it's an offered topic.
+# The user answers 5 questions and are told if they are wrong or correct.
+# At the end of the quiz they are told how many they got right out of 5 and have the option of
+# ending the program or taking another quiz.
+
 
 total_score = 0
 
