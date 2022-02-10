@@ -24,25 +24,27 @@ sports_questions = {'Which gymnast is the "triple-twisting double-tucked salto b
     'Which boxer fought against Muhammad Ali and won?':'Joe Frazier'}
 
 
+question_bank = {
+    'art': art_questions, 
+    'space': space_questions, 
+    'sport': sports_questions
+}
+
 def main():
-    topic_choices = ['art', 'space', 'sports']
+    topic_choices = question_bank.keys()
 
     # I forgot how to do validation with while loops in python so I adapted this loop I found.
     # Source:https://stackoverflow.com/questions/23294658/asking-the-user-for-input-until-they-give-a-valid-response
     while True:
         topic = input('Would you like a art, space, or sports questions? ')
-        if topic.lower() not in topic_choices:
+        topic = topic.lower()
+        if topic not in topic_choices:
             print('Not a valid choice.')
         else:
             break
 
-    if topic.lower() == 'art':
-        ask_questions(topic, art_questions)
-    elif topic.lower() == 'space':
-        ask_questions(topic, space_questions)
-    elif topic.lower() == 'sports':
-        ask_questions(topic, sports_questions)
-
+    questions = question_bank[topic]
+    ask_questions(topic, questions)
     
 def ask_questions(topic, questions):
 
